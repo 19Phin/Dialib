@@ -1,0 +1,40 @@
+{
+	"type": "origins:action_over_time",
+	"hidden": true,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:change_resource",
+				"resource": "wardenorigin:digging/var",
+				"operation": "set",
+				"change": 0
+			},
+			{
+				"type": "origins:trigger_cooldown",
+				"power": "wardenorigin:digging/cooldown"
+			}
+		]
+	},
+	"interval": 1,
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"resource": "wardenorigin:digging/var",
+				"comparison": "==",
+				"compare_to": 1
+			},
+			{
+				"type": "origins:in_block_anywhere",
+				"comparison": ">=",
+				"compare_to": 1,
+				"block_condition": {
+					"type": "origins:movement_blocking"
+				},
+				"inverted": true
+			}
+		]
+	}
+}

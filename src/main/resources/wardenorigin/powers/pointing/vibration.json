@@ -1,0 +1,13 @@
+{
+	"type": "origins:vibration",
+	"name": "Blind",
+	"description": "You're blind but can \"see\" vibrations",
+	"bientity_action": {
+		"type": "origins:point",
+		"duration": "60"
+    },
+	"block_action": {
+		"type": "origins:execute_command",
+		"command": "summon minecraft:marker ~ ~ ~ {Tags: [\"scent\"]}"
+	}
+}

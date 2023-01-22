@@ -1,0 +1,39 @@
+{
+    "type": "origins:multiple",
+	"hidden": true,
+    "apply_darkness": {
+	    "type": "origins:action_over_time",
+	    "entity_action": {
+		    "type": "origins:area_of_effect",
+		    "radius": 20,
+		    "bientity_action": {
+			"type": "origins:target_action",
+			"action": {
+		            "type": "origins:apply_effect",
+			    "effect": {
+			        "effect": "minecraft:darkness",
+			        "duration": 240,
+			        "amplifier": 0,
+				"show_particles": false,
+				"show_icon": false
+			    }
+		        }
+		    }
+		},
+	    "interval": 120
+	},
+	"blind": {
+	    "type": "origins:action_over_time",
+	    "entity_action": {
+	        "type": "origins:apply_effect",
+		    "effect": {
+		        "effect": "minecraft:blindness",
+		        "duration": 200,
+		        "amplifier": 0,
+			"show_particles": false,
+			"show_icon": false
+		    }
+	    },
+	    "interval": 20
+      }
+}

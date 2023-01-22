@@ -1,0 +1,46 @@
+{
+	"type": "origins:action_over_time",
+	"hidden": true,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:make_bi",
+				"condition": {
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:marker"
+						},
+						{
+							"type": "origins:nbt",
+							"nbt": "{Tags: ['shrek']}"
+						}
+					]
+				},
+				"bientity_action": {
+					"type": "origins:point",
+					"duration": "200",
+					"sprite_location": "dialib:textures/hud/icon.png"
+				}
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "kill @e[type=minecraft:marker,tag=shrek]"
+			},
+			{
+				"type": "origins:play_sound",
+				"sound": "minecraft:block.sculk_shrieker.shriek",
+				"volume": 0.0625
+			}
+		]
+	},
+	"interval": 1,
+	"condition": {
+		"type": "origins:command",
+		"command": "execute if entity @e[type = minecraft:marker, tag=shrek]",
+		"comparison": ">=",
+		"compare_to": 1
+	}
+}

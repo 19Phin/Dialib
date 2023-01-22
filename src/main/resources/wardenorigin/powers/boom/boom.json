@@ -1,0 +1,77 @@
+{
+    "type": "origins:active_self",
+	"name": "Sonic boom",
+	"description": "Primary key does a sonic boom if looking at an entity. Works through blocks",
+	"entity_action": {
+		"type": "origins:raycast",
+		"distance": 17.5,
+		"block": false,
+		"fluid_handling": "any",
+		"bientity_condition": {
+			"type": "origins:actor_condition",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "wardenorigin:boom/cooldown",
+				"comparison": "==",
+				"compare_to": 0
+			}
+		},
+		"bientity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:actor_action",
+					"action": {
+						"type": "origins:delay",
+						"ticks": 34,
+						"action": {
+							"type": "origins:play_sound",
+							"sound": "entity.warden.sonic_boom"
+						}
+					}
+				},
+				{
+					"type": "origins:target_action",
+					"action": {
+						"type": "origins:delay",
+						"ticks": 34,
+						"action": {
+							"type": "origins:damage",
+							"amount": 10,
+							"source": {
+								"name": "sonic_boom",
+								"bypasses_armor": true
+							}
+						}
+					}
+				}
+			]
+		},
+		"hit_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:play_sound",
+					"sound": "entity.warden.sonic_charge"
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "wardenorigin:boom/cooldown"
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 34,
+					"action": {
+						"type": "origins:raycast",
+						"distance": 8,
+						"block": false,
+						"entity": false,
+						"fluid_handling": "any",
+						"command_along_ray": "particle minecraft:sonic_boom ^ ^-0.5 ^1 0 0 0 0 10 force",
+						"command_step": 1
+					}
+				}
+			]
+		}
+	}
+}

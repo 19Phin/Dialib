@@ -1,0 +1,49 @@
+{
+	"type": "origins:active_self",
+	"name": "Anger",
+	"description": "Quaternary key causes you to roar and gain speed for 100 seconds, with a 100 second cooldown",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:trigger_cooldown",
+				"power": "wardenorigin:roar/cooldown"
+			},
+			{
+				"type": "origins:apply_effect",
+				"effect": {
+					"effect": "minecraft:speed",
+					"duration": 2000,
+					"amplifier": 9,
+					"show_particles": false,
+					"show_icon": false
+				}
+			},
+			{
+				"type": "origins:play_sound",
+				"sound": "entity.warden.roar"
+			}
+		]
+	},
+	"key": {
+		"key": "key.origins.quaternary_active"
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"resource": "wardenorigin:roar/cooldown",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			{
+				"type": "origins:resource",
+				"resource": "wardenorigin:digging/var",
+				"comparison": ">=",
+				"compare_to": 1,
+				"inverted": true
+			}
+		]
+	}
+}

@@ -1,0 +1,28 @@
+{
+    "powers": [
+        "wardenorigin:warden_like/other",
+        "wardenorigin:pointing/vibration",
+        "wardenorigin:boom/boom",
+        "wardenorigin:shrieker",
+        "wardenorigin:digging/activate_dig",
+        "wardenorigin:roar/roar",
+        "wardenorigin:boom/cooldown",
+        "wardenorigin:digging/cooldown",
+        "wardenorigin:digging/dig",
+        "wardenorigin:digging/on_dig",
+        "wardenorigin:digging/on_surface",
+        "wardenorigin:digging/slow",
+        "wardenorigin:digging/var",
+        "wardenorigin:pointing/blocks",
+        "wardenorigin:pointing/find_shriek",
+        "wardenorigin:pointing/shriekers",
+        "wardenorigin:roar/cooldown",
+        "wardenorigin:warden_like/blindness",
+        "wardenorigin:warden_like/novib"
+    ],
+    "icon": "minecraft:sculk_sensor",
+    "order": 5,
+    "impact": 3,
+    "name": "Warden",
+    "description": "You just are a warden"
+}

@@ -1,0 +1,28 @@
+{
+	"type": "origins:active_self",
+	"name": "Summon",
+	"description": "Secondary key teleports you to an active shrieker. They are marked in red and you will hear them from any distance",
+	"entity_action": {
+		"type": "origins:side",
+		"action": {
+			"type": "origins:become_entity",
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:entity_type",
+						"entity_type": "minecraft:warden"
+					},
+					{
+						"type": "origins:nbt",
+						"nbt": "{Brain: {memories:{\"minecraft:is_emerging\":{value:{}}}}}"
+					}
+				]
+			}
+		},
+		"side": "server"
+	},
+	"key": {
+		"key": "key.origins.secondary_active"
+	}
+}

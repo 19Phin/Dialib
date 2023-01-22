@@ -1,0 +1,37 @@
+{
+  "type": "origins:active_self",
+  "name": "Dig",
+  "description": "Ternary key allows you to dig with a 5 minute cooldown after re-emerging",
+  "entity_action": {
+    "type": "origins:change_resource",
+    "resource": "wardenorigin:digging/var",
+    "operation": "set",
+    "change": 2
+  },
+  "key": {
+    "key": "key.origins.ternary_active"
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:resource",
+        "resource": "wardenorigin:digging/var",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "origins:resource",
+        "resource": "wardenorigin:digging/cooldown",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "origins:resource",
+        "resource": "wardenorigin:roar/cooldown",
+        "comparison": "<=",
+        "compare_to": 2000
+      }
+    ]
+  }
+}
