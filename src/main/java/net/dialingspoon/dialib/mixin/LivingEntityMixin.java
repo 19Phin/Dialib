@@ -6,7 +6,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.Packet;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.event.listener.EntityGameEventHandler;
@@ -27,10 +26,6 @@ public class LivingEntityMixin extends Entity {
 	public void readCustomDataFromNbt(NbtCompound nbt) {}
 	@Shadow
 	public void writeCustomDataToNbt(NbtCompound nbt) {}
-	@Shadow
-	public Packet<?> createSpawnPacket() {
-		return null;
-	}
 
 	@Override
 	public void updateEventHandler(BiConsumer<EntityGameEventHandler<?>, ServerWorld> callback) {
