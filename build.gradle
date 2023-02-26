@@ -56,16 +56,6 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation "com.github.apace100:apoli:${project.apoli_version}"
-
-	modImplementation "com.jamieswhiteshirt:reach-entity-attributes:${project.reach_version}"
-
-	modImplementation "maven.modrinth:midnightlib:${project.midnightlib_version}"
-	include "maven.modrinth:midnightlib:${project.midnightlib_version}"
-
-	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
-
-	implementation("com.github.LlamaLad7:MixinExtras:${project.mixin_extras_version}")
-	annotationProcessor("com.github.LlamaLad7:MixinExtras:${project.mixin_extras_version}")
 }
 
 processResources {
