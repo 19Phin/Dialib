@@ -12,6 +12,7 @@
   },
 
   "license": "MIT License",
+  "icon": "assets/dialib/icon.png",
 
   "environment": "*",
   "entrypoints": {
