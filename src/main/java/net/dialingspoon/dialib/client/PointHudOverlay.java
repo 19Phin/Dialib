@@ -30,11 +30,11 @@ public class PointHudOverlay implements HudRenderCallback {
             ArrayList<Identifier> ID = (((PlayerEntityInterface) client.player).getSpriteID());
 
             Vector3f point = new Vector3f((Vector3fc) client.player.getEyePos().subtract(pos.get(i)));
-            Vec2f vec2 = rotateAroundZero(new Vec2f(point.x, point.z()), client.player.renderYaw);
+            Vec2f vec2 = rotateAroundZero(new Vec2f(point.x, point.z), client.player.renderYaw);
             point = new Vector3f(vec2.x, point.y, vec2.y);
 
             if (point.z() > 0) {
-                vec2 = rotateAroundZero(new Vec2f(point.z(), point.y), client.player.renderPitch);
+                vec2 = rotateAroundZero(new Vec2f(point.z, point.y), client.player.renderPitch);
                 point = new Vector3f(point.x, vec2.y, vec2.x);
 
                 int x = client.getWindow().getScaledWidth() / 2;
@@ -44,8 +44,8 @@ public class PointHudOverlay implements HudRenderCallback {
                 RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
                 RenderSystem.setShaderTexture(0, ID.get(i));
                 DrawableHelper.drawTexture(matrixStack,
-                        (x - 5) + (int) (point.x *180 / (float)client.options.getFov().getValue() * (1/client.player.getFovMultiplier()) *70 / point.z()),
-                        (y - 6) - (int) (point.y *180 / (float)client.options.getFov().getValue() * (1/client.player.getFovMultiplier()) *70 / point.z()),
+                        (x - 5) + (int) (point.x *180 / (float)client.options.getFov().getValue() * (1/client.player.getFovMultiplier()) *70 / point.z),
+                        (y - 6) - (int) (point.y *180 / (float)client.options.getFov().getValue() * (1/client.player.getFovMultiplier()) *70 / point.z),
                         0, 0, 12, 12, 12, 12);
             }
             if (ticks.get(i) <= 0){
