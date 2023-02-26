@@ -58,7 +58,7 @@ public class VibrationPower extends Power implements VibrationListener.Callback 
         this.bientityCondition = bientityCondition;
         this.commandAtVibration = commandAtVibration;
         this.vibrationCooldown = vibrationCooldown;
-        gameEventHandler = new EntityGameEventHandler(new VibrationListener(new EntityPositionSource(this.entity, this.entity.getStandingEyeHeight()), radius, this, null, 0.0F, 0));
+        gameEventHandler = new EntityGameEventHandler(new VibrationListener(new EntityPositionSource(this.entity, this.entity.getStandingEyeHeight()), radius, this));
         this.setTicking(false);
     }
 
